@@ -6,7 +6,7 @@ class Cipher
     characters = message.downcase.chars
     result = []
     characters.each do |char|
-      if char == " "
+      if ALPHA.include?(char) == false
         result << char
       else
         make_cipher(shift).each do |pair|
@@ -21,7 +21,7 @@ class Cipher
     characters = message.downcase.chars
     result = []
     characters.each do |char|
-      if char == " "
+      if ALPHA.include?(char) == false
         result << char
       else
         solve_cipher(shift).each do |pair|
@@ -44,3 +44,6 @@ class Cipher
   end
 
 end
+
+# cipher = Cipher.new
+# p cipher.encode("hello!", 3)
